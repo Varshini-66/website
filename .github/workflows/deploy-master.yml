@@ -1,0 +1,22 @@
+name: Deploy Master
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Build and Publish Website
+        run: |
+          # Add your build and publish commands here
+          # For example:
+          # npm install
+          # npm run build
+          # Publish command to deploy website on port 82
