@@ -1,0 +1,22 @@
+name: Build Develop
+
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Build Product
+        run: |
+          # Add your build commands here
+          # For example:
+          # npm install
+          # npm run build
+          # This workflow doesn't include publishing
