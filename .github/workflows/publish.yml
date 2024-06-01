@@ -1,0 +1,22 @@
+name: Build and Publish on Master
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build_and_publish:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Install dependencies and build
+      run: |
+        npm install # Or any other build commands
+        npm run build
+
+    - name: Publish website
+      run: npm run publish_website --port 82 # Or any command to publish on port 82
